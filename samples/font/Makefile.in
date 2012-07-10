@@ -131,7 +131,7 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
 
 ### Targets: ###
 
-all: font$(EXEEXT) $(__font_bundle___depname)
+all: font$(EXEEXT) $(__font_bundle___depname) data
 
 install: 
 
@@ -176,6 +176,18 @@ font$(EXEEXT): $(FONT_OBJECTS) $(__font___win32rc)
 
 @COND_PLATFORM_MACOSX_1@font_bundle: $(____font_BUNDLE_TGT_REF_DEP)
 
+data:
+	@mkdir -p .
+	@for f in wxprivate.ttf; do \
+	if test ! -f ./$$f -a ! -d ./$$f ; \
+	then x=yep ; \
+	else x=`find $(srcdir)/$$f -newer ./$$f -print` ; \
+	fi; \
+	case "$$x" in ?*) \
+	cp -pRf $(srcdir)/$$f . ;; \
+	esac; \
+	done
+
 font_sample_rc.o: $(srcdir)/../../samples/sample.rc
 	$(WINDRES) -i$< -o$@    --define __WX$(TOOLKIT)__ $(__WXUNIV_DEFINE_p_2) $(__DEBUG_DEFINE_p_2)  $(__EXCEPTIONS_DEFINE_p_2) $(__RTTI_DEFINE_p_2) $(__THREAD_DEFINE_p_2)   --include-dir $(srcdir) $(__DLLFLAG_p_2) --include-dir $(srcdir)/../../samples $(__RCDEFDIR_p_1) --include-dir $(top_srcdir)/include
 
@@ -186,4 +198,4 @@ font_font.o: $(srcdir)/font.cpp
 # Include dependency info, if present:
 @IF_GNU_MAKE@-include ./.deps/*.d
 
-.PHONY: all install uninstall clean distclean font_bundle
+.PHONY: all install uninstall clean distclean font_bundle data

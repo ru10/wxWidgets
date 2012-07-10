@@ -172,4 +172,6 @@ private:
     DECLARE_DYNAMIC_CLASS(wxFont)
 };
 
+#define wxHAS_PRIVATE_FONTS 1
+
 #endif // _WX_FONT_H_
