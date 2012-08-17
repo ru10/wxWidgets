@@ -1367,6 +1367,7 @@ ____ADVANCED_SRC_FILENAMES_OBJECTS =  &
 	$(OBJS)\monodll_helpext.obj &
 	$(OBJS)\monodll_hyperlinkg.obj &
 	$(OBJS)\monodll_laywin.obj &
+	$(OBJS)\monodll_maskededit.obj &
 	$(OBJS)\monodll_notifmsgg.obj &
 	$(OBJS)\monodll_odcombo.obj &
 	$(OBJS)\monodll_propdlg.obj &
@@ -1405,6 +1406,7 @@ ____ADVANCED_SRC_FILENAMES_OBJECTS =  &
 	$(OBJS)\monodll_helpext.obj &
 	$(OBJS)\monodll_hyperlinkg.obj &
 	$(OBJS)\monodll_laywin.obj &
+	$(OBJS)\monodll_maskededit.obj &
 	$(OBJS)\monodll_notifmsgg.obj &
 	$(OBJS)\monodll_odcombo.obj &
 	$(OBJS)\monodll_propdlg.obj &
@@ -2795,6 +2797,7 @@ ____ADVANCED_SRC_FILENAMES_1_OBJECTS =  &
 	$(OBJS)\monolib_helpext.obj &
 	$(OBJS)\monolib_hyperlinkg.obj &
 	$(OBJS)\monolib_laywin.obj &
+	$(OBJS)\monolib_maskededit.obj &
 	$(OBJS)\monolib_notifmsgg.obj &
 	$(OBJS)\monolib_odcombo.obj &
 	$(OBJS)\monolib_propdlg.obj &
@@ -2833,6 +2836,7 @@ ____ADVANCED_SRC_FILENAMES_1_OBJECTS =  &
 	$(OBJS)\monolib_helpext.obj &
 	$(OBJS)\monolib_hyperlinkg.obj &
 	$(OBJS)\monolib_laywin.obj &
+	$(OBJS)\monolib_maskededit.obj &
 	$(OBJS)\monolib_notifmsgg.obj &
 	$(OBJS)\monolib_odcombo.obj &
 	$(OBJS)\monolib_propdlg.obj &
@@ -5231,6 +5235,7 @@ ____ADVANCED_SRC_FILENAMES_2_OBJECTS =  &
 	$(OBJS)\advdll_helpext.obj &
 	$(OBJS)\advdll_hyperlinkg.obj &
 	$(OBJS)\advdll_laywin.obj &
+	$(OBJS)\advdll_maskededit.obj &
 	$(OBJS)\advdll_notifmsgg.obj &
 	$(OBJS)\advdll_odcombo.obj &
 	$(OBJS)\advdll_propdlg.obj &
@@ -5269,6 +5274,7 @@ ____ADVANCED_SRC_FILENAMES_2_OBJECTS =  &
 	$(OBJS)\advdll_helpext.obj &
 	$(OBJS)\advdll_hyperlinkg.obj &
 	$(OBJS)\advdll_laywin.obj &
+	$(OBJS)\advdll_maskededit.obj &
 	$(OBJS)\advdll_notifmsgg.obj &
 	$(OBJS)\advdll_odcombo.obj &
 	$(OBJS)\advdll_propdlg.obj &
@@ -5379,6 +5385,7 @@ ____ADVANCED_SRC_FILENAMES_3_OBJECTS =  &
 	$(OBJS)\advlib_helpext.obj &
 	$(OBJS)\advlib_hyperlinkg.obj &
 	$(OBJS)\advlib_laywin.obj &
+	$(OBJS)\advlib_maskededit.obj &
 	$(OBJS)\advlib_notifmsgg.obj &
 	$(OBJS)\advlib_odcombo.obj &
 	$(OBJS)\advlib_propdlg.obj &
@@ -5417,6 +5424,7 @@ ____ADVANCED_SRC_FILENAMES_3_OBJECTS =  &
 	$(OBJS)\advlib_helpext.obj &
 	$(OBJS)\advlib_hyperlinkg.obj &
 	$(OBJS)\advlib_laywin.obj &
+	$(OBJS)\advlib_maskededit.obj &
 	$(OBJS)\advlib_notifmsgg.obj &
 	$(OBJS)\advlib_odcombo.obj &
 	$(OBJS)\advlib_propdlg.obj &
@@ -17499,6 +17507,11 @@ $(OBJS)\monodll_laywin.obj :  .AUTODEPEND ..\..\src\generic\laywin.cpp
 !endif
 
 !ifeq USE_GUI 1
+$(OBJS)\monodll_maskededit.obj :  .AUTODEPEND ..\..\src\generic\maskededit.cpp
+	$(CXX) -bt=nt -zq -fo=$^@ $(MONODLL_CXXFLAGS) $<
+!endif
+
+!ifeq USE_GUI 1
 $(OBJS)\monodll_notifmsgg.obj :  .AUTODEPEND ..\..\src\generic\notifmsgg.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(MONODLL_CXXFLAGS) $<
 !endif
@@ -24469,6 +24482,11 @@ $(OBJS)\monolib_hyperlinkg.obj :  .AUTODEPEND ..\..\src\generic\hyperlinkg.cpp
 
 !ifeq USE_GUI 1
 $(OBJS)\monolib_laywin.obj :  .AUTODEPEND ..\..\src\generic\laywin.cpp
+	$(CXX) -bt=nt -zq -fo=$^@ $(MONOLIB_CXXFLAGS) $<
+!endif
+
+!ifeq USE_GUI 1
+$(OBJS)\monolib_maskededit.obj :  .AUTODEPEND ..\..\src\generic\maskededit.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(MONOLIB_CXXFLAGS) $<
 !endif
 
@@ -36715,6 +36733,9 @@ $(OBJS)\advdll_hyperlinkg.obj :  .AUTODEPEND ..\..\src\generic\hyperlinkg.cpp
 $(OBJS)\advdll_laywin.obj :  .AUTODEPEND ..\..\src\generic\laywin.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(ADVDLL_CXXFLAGS) $<
 
+$(OBJS)\advdll_maskededit.obj :  .AUTODEPEND ..\..\src\generic\maskededit.cpp
+	$(CXX) -bt=nt -zq -fo=$^@ $(ADVDLL_CXXFLAGS) $<
+
 $(OBJS)\advdll_notifmsgg.obj :  .AUTODEPEND ..\..\src\generic\notifmsgg.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(ADVDLL_CXXFLAGS) $<
 
@@ -37307,6 +37328,9 @@ $(OBJS)\advlib_hyperlinkg.obj :  .AUTODEPEND ..\..\src\generic\hyperlinkg.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(ADVLIB_CXXFLAGS) $<
 
 $(OBJS)\advlib_laywin.obj :  .AUTODEPEND ..\..\src\generic\laywin.cpp
+	$(CXX) -bt=nt -zq -fo=$^@ $(ADVLIB_CXXFLAGS) $<
+
+$(OBJS)\advlib_maskededit.obj :  .AUTODEPEND ..\..\src\generic\maskededit.cpp
 	$(CXX) -bt=nt -zq -fo=$^@ $(ADVLIB_CXXFLAGS) $<
 
 $(OBJS)\advlib_notifmsgg.obj :  .AUTODEPEND ..\..\src\generic\notifmsgg.cpp

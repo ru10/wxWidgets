@@ -1011,6 +1011,13 @@
 // wxHeaderCtrl)
 #define wxUSE_REARRANGECTRL 1
 
+// wxMaskedEditText and wxMaskedEditCombo controls
+//
+// Default is 1.
+//
+// Recommended setting: 1
+#define wxUSE_MASKED_EDIT 1
+
 // ----------------------------------------------------------------------------
 // Miscellaneous GUI stuff
 // ----------------------------------------------------------------------------

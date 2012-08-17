@@ -451,6 +451,8 @@
 
 #define wxUSE_REARRANGECTRL 0
 
+#define wxUSE_MASKED_EDIT 0
+
 
 #define wxUSE_ACCEL 0
 

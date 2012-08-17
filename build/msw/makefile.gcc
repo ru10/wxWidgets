@@ -2926,6 +2926,7 @@ ____ADVANCED_SRC_FILENAMES_OBJECTS =  \
 	$(OBJS)\monodll_helpext.o \
 	$(OBJS)\monodll_hyperlinkg.o \
 	$(OBJS)\monodll_laywin.o \
+	$(OBJS)\monodll_maskededit.o \
 	$(OBJS)\monodll_notifmsgg.o \
 	$(OBJS)\monodll_odcombo.o \
 	$(OBJS)\monodll_propdlg.o \
@@ -2964,6 +2965,7 @@ ____ADVANCED_SRC_FILENAMES_OBJECTS =  \
 	$(OBJS)\monodll_helpext.o \
 	$(OBJS)\monodll_hyperlinkg.o \
 	$(OBJS)\monodll_laywin.o \
+	$(OBJS)\monodll_maskededit.o \
 	$(OBJS)\monodll_notifmsgg.o \
 	$(OBJS)\monodll_odcombo.o \
 	$(OBJS)\monodll_propdlg.o \
@@ -4338,6 +4340,7 @@ ____ADVANCED_SRC_FILENAMES_1_OBJECTS =  \
 	$(OBJS)\monolib_helpext.o \
 	$(OBJS)\monolib_hyperlinkg.o \
 	$(OBJS)\monolib_laywin.o \
+	$(OBJS)\monolib_maskededit.o \
 	$(OBJS)\monolib_notifmsgg.o \
 	$(OBJS)\monolib_odcombo.o \
 	$(OBJS)\monolib_propdlg.o \
@@ -4376,6 +4379,7 @@ ____ADVANCED_SRC_FILENAMES_1_OBJECTS =  \
 	$(OBJS)\monolib_helpext.o \
 	$(OBJS)\monolib_hyperlinkg.o \
 	$(OBJS)\monolib_laywin.o \
+	$(OBJS)\monolib_maskededit.o \
 	$(OBJS)\monolib_notifmsgg.o \
 	$(OBJS)\monolib_odcombo.o \
 	$(OBJS)\monolib_propdlg.o \
@@ -6740,6 +6744,7 @@ ____ADVANCED_SRC_FILENAMES_2_OBJECTS =  \
 	$(OBJS)\advdll_helpext.o \
 	$(OBJS)\advdll_hyperlinkg.o \
 	$(OBJS)\advdll_laywin.o \
+	$(OBJS)\advdll_maskededit.o \
 	$(OBJS)\advdll_notifmsgg.o \
 	$(OBJS)\advdll_odcombo.o \
 	$(OBJS)\advdll_propdlg.o \
@@ -6778,6 +6783,7 @@ ____ADVANCED_SRC_FILENAMES_2_OBJECTS =  \
 	$(OBJS)\advdll_helpext.o \
 	$(OBJS)\advdll_hyperlinkg.o \
 	$(OBJS)\advdll_laywin.o \
+	$(OBJS)\advdll_maskededit.o \
 	$(OBJS)\advdll_notifmsgg.o \
 	$(OBJS)\advdll_odcombo.o \
 	$(OBJS)\advdll_propdlg.o \
@@ -6884,6 +6890,7 @@ ____ADVANCED_SRC_FILENAMES_3_OBJECTS =  \
 	$(OBJS)\advlib_helpext.o \
 	$(OBJS)\advlib_hyperlinkg.o \
 	$(OBJS)\advlib_laywin.o \
+	$(OBJS)\advlib_maskededit.o \
 	$(OBJS)\advlib_notifmsgg.o \
 	$(OBJS)\advlib_odcombo.o \
 	$(OBJS)\advlib_propdlg.o \
@@ -6922,6 +6929,7 @@ ____ADVANCED_SRC_FILENAMES_3_OBJECTS =  \
 	$(OBJS)\advlib_helpext.o \
 	$(OBJS)\advlib_hyperlinkg.o \
 	$(OBJS)\advlib_laywin.o \
+	$(OBJS)\advlib_maskededit.o \
 	$(OBJS)\advlib_notifmsgg.o \
 	$(OBJS)\advlib_odcombo.o \
 	$(OBJS)\advlib_propdlg.o \
@@ -17150,6 +17158,11 @@ $(OBJS)\monodll_laywin.o: ../../src/generic/laywin.cpp
 endif
 
 ifeq ($(USE_GUI),1)
+$(OBJS)\monodll_maskededit.o: ../../src/generic/maskededit.cpp
+	$(CXX) -c -o $@ $(MONODLL_CXXFLAGS) $(CPPDEPS) $<
+endif
+
+ifeq ($(USE_GUI),1)
 $(OBJS)\monodll_notifmsgg.o: ../../src/generic/notifmsgg.cpp
 	$(CXX) -c -o $@ $(MONODLL_CXXFLAGS) $(CPPDEPS) $<
 endif
@@ -24120,6 +24133,11 @@ endif
 
 ifeq ($(USE_GUI),1)
 $(OBJS)\monolib_laywin.o: ../../src/generic/laywin.cpp
+	$(CXX) -c -o $@ $(MONOLIB_CXXFLAGS) $(CPPDEPS) $<
+endif
+
+ifeq ($(USE_GUI),1)
+$(OBJS)\monolib_maskededit.o: ../../src/generic/maskededit.cpp
 	$(CXX) -c -o $@ $(MONOLIB_CXXFLAGS) $(CPPDEPS) $<
 endif
 
@@ -36366,6 +36384,9 @@ $(OBJS)\advdll_hyperlinkg.o: ../../src/generic/hyperlinkg.cpp
 $(OBJS)\advdll_laywin.o: ../../src/generic/laywin.cpp
 	$(CXX) -c -o $@ $(ADVDLL_CXXFLAGS) $(CPPDEPS) $<
 
+$(OBJS)\advdll_maskededit.o: ../../src/generic/maskededit.cpp
+	$(CXX) -c -o $@ $(ADVDLL_CXXFLAGS) $(CPPDEPS) $<
+
 $(OBJS)\advdll_notifmsgg.o: ../../src/generic/notifmsgg.cpp
 	$(CXX) -c -o $@ $(ADVDLL_CXXFLAGS) $(CPPDEPS) $<
 
@@ -36958,6 +36979,9 @@ $(OBJS)\advlib_hyperlinkg.o: ../../src/generic/hyperlinkg.cpp
 	$(CXX) -c -o $@ $(ADVLIB_CXXFLAGS) $(CPPDEPS) $<
 
 $(OBJS)\advlib_laywin.o: ../../src/generic/laywin.cpp
+	$(CXX) -c -o $@ $(ADVLIB_CXXFLAGS) $(CPPDEPS) $<
+
+$(OBJS)\advlib_maskededit.o: ../../src/generic/maskededit.cpp
 	$(CXX) -c -o $@ $(ADVLIB_CXXFLAGS) $(CPPDEPS) $<
 
 $(OBJS)\advlib_notifmsgg.o: ../../src/generic/notifmsgg.cpp

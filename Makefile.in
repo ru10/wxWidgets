@@ -3886,6 +3886,7 @@ COND_WXUNIV_0_ADVANCED_HDR =  \
 	wx/generic/helpext.h \
 	wx/generic/hyperlink.h \
 	wx/generic/laywin.h \
+	wx/generic/maskededit.h \
 	wx/generic/notifmsg.h \
 	wx/generic/propdlg.h \
 	wx/generic/sashwin.h \
@@ -3896,6 +3897,7 @@ COND_WXUNIV_0_ADVANCED_HDR =  \
 	wx/hyperlink.h \
 	wx/joystick.h \
 	wx/laywin.h \
+	wx/maskededit.h \
 	wx/notifmsg.h \
 	wx/odcombo.h \
 	wx/propdlg.h \
@@ -3939,6 +3941,7 @@ COND_WXUNIV_1_ADVANCED_HDR =  \
 	wx/generic/helpext.h \
 	wx/generic/hyperlink.h \
 	wx/generic/laywin.h \
+	wx/generic/maskededit.h \
 	wx/generic/notifmsg.h \
 	wx/generic/propdlg.h \
 	wx/generic/sashwin.h \
@@ -3949,6 +3952,7 @@ COND_WXUNIV_1_ADVANCED_HDR =  \
 	wx/hyperlink.h \
 	wx/joystick.h \
 	wx/laywin.h \
+	wx/maskededit.h \
 	wx/notifmsg.h \
 	wx/odcombo.h \
 	wx/propdlg.h \
@@ -6405,6 +6409,7 @@ COND_WXUNIV_0___ADVANCED_SRC_OBJECTS =  \
 	monodll_helpext.o \
 	monodll_hyperlinkg.o \
 	monodll_laywin.o \
+	monodll_maskededit.o \
 	monodll_notifmsgg.o \
 	monodll_odcombo.o \
 	monodll_propdlg.o \
@@ -6442,6 +6447,7 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS =  \
 	monodll_helpext.o \
 	monodll_hyperlinkg.o \
 	monodll_laywin.o \
+	monodll_maskededit.o \
 	monodll_notifmsgg.o \
 	monodll_odcombo.o \
 	monodll_propdlg.o \
@@ -8651,6 +8657,7 @@ COND_WXUNIV_0___ADVANCED_SRC_OBJECTS_1 =  \
 	monolib_helpext.o \
 	monolib_hyperlinkg.o \
 	monolib_laywin.o \
+	monolib_maskededit.o \
 	monolib_notifmsgg.o \
 	monolib_odcombo.o \
 	monolib_propdlg.o \
@@ -8688,6 +8695,7 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS_1 =  \
 	monolib_helpext.o \
 	monolib_hyperlinkg.o \
 	monolib_laywin.o \
+	monolib_maskededit.o \
 	monolib_notifmsgg.o \
 	monolib_odcombo.o \
 	monolib_propdlg.o \
@@ -12816,6 +12824,7 @@ COND_WXUNIV_0___ADVANCED_SRC_OBJECTS_2 =  \
 	advdll_helpext.o \
 	advdll_hyperlinkg.o \
 	advdll_laywin.o \
+	advdll_maskededit.o \
 	advdll_notifmsgg.o \
 	advdll_odcombo.o \
 	advdll_propdlg.o \
@@ -12853,6 +12862,7 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS_2 =  \
 	advdll_helpext.o \
 	advdll_hyperlinkg.o \
 	advdll_laywin.o \
+	advdll_maskededit.o \
 	advdll_notifmsgg.o \
 	advdll_odcombo.o \
 	advdll_propdlg.o \
@@ -13128,6 +13138,7 @@ COND_WXUNIV_0___ADVANCED_SRC_OBJECTS_3 =  \
 	advlib_helpext.o \
 	advlib_hyperlinkg.o \
 	advlib_laywin.o \
+	advlib_maskededit.o \
 	advlib_notifmsgg.o \
 	advlib_odcombo.o \
 	advlib_propdlg.o \
@@ -13165,6 +13176,7 @@ COND_WXUNIV_1___ADVANCED_SRC_OBJECTS_3 =  \
 	advlib_helpext.o \
 	advlib_hyperlinkg.o \
 	advlib_laywin.o \
+	advlib_maskededit.o \
 	advlib_notifmsgg.o \
 	advlib_odcombo.o \
 	advlib_propdlg.o \
@@ -22270,6 +22282,9 @@ monodll_sound_sdl.o: $(srcdir)/src/unix/sound_sdl.cpp $(MONODLL_ODEP)
 @COND_USE_GUI_1@monodll_laywin.o: $(srcdir)/src/generic/laywin.cpp $(MONODLL_ODEP)
 @COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONODLL_CXXFLAGS) $(srcdir)/src/generic/laywin.cpp
 
+@COND_USE_GUI_1@monodll_maskededit.o: $(srcdir)/src/generic/maskededit.cpp $(MONODLL_ODEP)
+@COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONODLL_CXXFLAGS) $(srcdir)/src/generic/maskededit.cpp
+
 @COND_USE_GUI_1@monodll_notifmsgg.o: $(srcdir)/src/generic/notifmsgg.cpp $(MONODLL_ODEP)
 @COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONODLL_CXXFLAGS) $(srcdir)/src/generic/notifmsgg.cpp
 
@@ -28128,6 +28143,9 @@ monolib_sound_sdl.o: $(srcdir)/src/unix/sound_sdl.cpp $(MONOLIB_ODEP)
 
 @COND_USE_GUI_1@monolib_laywin.o: $(srcdir)/src/generic/laywin.cpp $(MONOLIB_ODEP)
 @COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONOLIB_CXXFLAGS) $(srcdir)/src/generic/laywin.cpp
+
+@COND_USE_GUI_1@monolib_maskededit.o: $(srcdir)/src/generic/maskededit.cpp $(MONOLIB_ODEP)
+@COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONOLIB_CXXFLAGS) $(srcdir)/src/generic/maskededit.cpp
 
 @COND_USE_GUI_1@monolib_notifmsgg.o: $(srcdir)/src/generic/notifmsgg.cpp $(MONOLIB_ODEP)
 @COND_USE_GUI_1@	$(CXXC) -c -o $@ $(MONOLIB_CXXFLAGS) $(srcdir)/src/generic/notifmsgg.cpp
@@ -38530,6 +38548,9 @@ advdll_hyperlinkg.o: $(srcdir)/src/generic/hyperlinkg.cpp $(ADVDLL_ODEP)
 advdll_laywin.o: $(srcdir)/src/generic/laywin.cpp $(ADVDLL_ODEP)
 	$(CXXC) -c -o $@ $(ADVDLL_CXXFLAGS) $(srcdir)/src/generic/laywin.cpp
 
+advdll_maskededit.o: $(srcdir)/src/generic/maskededit.cpp $(ADVDLL_ODEP)
+	$(CXXC) -c -o $@ $(ADVDLL_CXXFLAGS) $(srcdir)/src/generic/maskededit.cpp
+
 advdll_notifmsgg.o: $(srcdir)/src/generic/notifmsgg.cpp $(ADVDLL_ODEP)
 	$(CXXC) -c -o $@ $(ADVDLL_CXXFLAGS) $(srcdir)/src/generic/notifmsgg.cpp
 
@@ -38997,6 +39018,9 @@ advlib_hyperlinkg.o: $(srcdir)/src/generic/hyperlinkg.cpp $(ADVLIB_ODEP)
 
 advlib_laywin.o: $(srcdir)/src/generic/laywin.cpp $(ADVLIB_ODEP)
 	$(CXXC) -c -o $@ $(ADVLIB_CXXFLAGS) $(srcdir)/src/generic/laywin.cpp
+
+advlib_maskededit.o: $(srcdir)/src/generic/maskededit.cpp $(ADVLIB_ODEP)
+	$(CXXC) -c -o $@ $(ADVLIB_CXXFLAGS) $(srcdir)/src/generic/maskededit.cpp
 
 advlib_notifmsgg.o: $(srcdir)/src/generic/notifmsgg.cpp $(ADVLIB_ODEP)
 	$(CXXC) -c -o $@ $(ADVLIB_CXXFLAGS) $(srcdir)/src/generic/notifmsgg.cpp
